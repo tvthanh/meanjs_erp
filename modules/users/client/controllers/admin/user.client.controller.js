@@ -23,7 +23,7 @@
           vm.users.splice(vm.users.indexOf(user), 1);
         } else {
           vm.user.$remove(function () {
-            $state.go('admin.users');
+            $state.go('adminUsers');
           });
         }
       }
@@ -39,7 +39,7 @@
       var user = vm.user;
 
       user.$update(function () {
-        $state.go('admin.user', {
+        $state.go('adminUser', {
           userId: user._id
         });
       }, function (errorResponse) {

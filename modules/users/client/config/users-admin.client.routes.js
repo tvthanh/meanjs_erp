@@ -10,7 +10,7 @@
 
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('admin.users', {
+      .state('adminUsers', {
         url: '/users',
         templateUrl: 'modules/users/client/views/admin/list-users.client.view.html',
         controller: 'UserListController',
@@ -19,7 +19,7 @@
           pageTitle: 'Users List'
         }
       })
-      .state('admin.user', {
+      .state('adminUser', {
         url: '/users/:userId',
         templateUrl: 'modules/users/client/views/admin/view-user.client.view.html',
         controller: 'UserController',
@@ -31,7 +31,7 @@
           pageTitle: 'Edit {{ userResolve.displayName }}'
         }
       })
-      .state('admin.user-edit', {
+      .state('adminUser-edit', {
         url: '/users/:userId/edit',
         templateUrl: 'modules/users/client/views/admin/edit-user.client.view.html',
         controller: 'UserController',

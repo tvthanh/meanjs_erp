@@ -1,0 +1,23 @@
+<section>
+  <div class="page-header">
+    <h1>Todos</h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="todo in vm.todos"
+       data-ui-sref="todos.view({ todoId: todo._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="todo.created | date:'mediumDate'"></span>
+        by
+        <span data-ng-if="todo.user" data-ng-bind="todo.user.displayName"></span>
+        <span data-ng-if="!todo.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="todo.name"></h4>
+      <p class="list-group-item-text" data-ng-bind="todo.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="vm.todos.$resolved && !vm.todos.length">
+    No Todos yet, why don't you <a data-ui-sref="todos.create">create one</a>?
+  </div>
+</section>
