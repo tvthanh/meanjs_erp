@@ -8,7 +8,7 @@
 
   function pageTitle($rootScope, $timeout, $interpolate, $state) {
     var directive = {
-      retrict: 'A',
+      retrict: 'AEC',
       link: link
     };
 
@@ -25,12 +25,13 @@
       }
 
       function getTitle(currentState) {
-        var applicationCoreTitle = 'MEAN.js';
+        var applicationCoreTitle = 'Home';
         var workingState = currentState;
         if (currentState.data) {
           workingState = (typeof workingState.locals !== 'undefined') ? workingState.locals.globals : workingState;
           var stateTitle = $interpolate(currentState.data.pageTitle)(workingState);
-          return applicationCoreTitle + ' - ' + stateTitle;
+          // return applicationCoreTitle + ' - ' + stateTitle;
+          return stateTitle;
         } else {
           return applicationCoreTitle;
         }

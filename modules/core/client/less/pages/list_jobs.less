@@ -1,0 +1,263 @@
+/*
+ * Page: my jobs pages
+ * ------------------------------
+ */
+@blueDare: #1c3f95;
+#simplemodal-container {
+	width: 90% !important;
+	height: 80% !important;
+	overflow: inherit !important;
+	z-index: 2000 !important;
+	background: transparent !important;
+	border: none !important;
+	padding: 8px !important;
+	.simplemodal-wrap {
+    background-color: #333;
+    border: 4px solid #444;
+    padding: 15px 8px !important;
+	}
+	a.modalCloseImg {
+		top: 0 !important;
+		right: 0 !important;
+	}
+	.title {
+		font-size: 16px;
+		color: #3c8dbc;
+	}
+}
+
+#simplemodal-overlay {
+	z-index: 2000 !important;
+}
+
+.ic-sort-by {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 2px;
+}
+
+.content-wrapper {
+	background-color: #fff;
+	.form-control {
+		padding: 5px;
+	}
+	.tbl-list-jobs {
+		tr {
+			border-bottom: 1px solid #d2d6de;
+			th {
+				padding: 8px 2px;
+			}
+		}
+		.tr-title {
+			th {
+				background-color: #e1e1e1;
+				border-bottom: 2px solid #3e3e3e;
+			}
+		}
+		td {
+			vertical-align: middle;
+		}
+		.title, .pos-salary {
+			color: @blueDare;
+		}
+		.title {
+			font-weight: bold;
+		}
+		.company-name {
+			font-weight: bold;
+		}
+	}
+	.list-info-jobs {
+		margin: 0 0 5px;
+		padding: 0;
+		.number {
+			padding: 1px 5px;
+			border-radius: 2px;
+			font-size: 12px;
+			line-height: 12px;
+			background-color: #9d9d9d;
+			color: #fff;
+		}
+	}
+	.col-name {
+		min-width: 361px;
+		// padding-bottom: 40px;
+	}
+	.box-info-social {
+		// position: absolute;
+		// left: 0;
+		// bottom: 0;
+		display: none;
+	}
+	.list-info-social {
+		.icon-job {
+			width: 28px;
+			height: 28px;
+			display: block;
+			background: url(../img/common/ic_sprite_job.png) no-repeat;
+			&.icon01 {
+				background-position: 0 0;
+			}
+			&.icon02 {
+				background-position: -35px 0;
+			}
+			&.icon03 {
+				background-position: -70px 0;
+			}
+			&.icon04 {
+				background-position: -106px 0;
+			}
+			&.icon05 {
+				background-position: -141px 0;
+			}
+			&.icon06 {
+				background-position: -176px 0;
+			}
+			&.icon07 {
+				background-position: -211px 0;
+			}
+			&.icon08 {
+				background-position: -246px 0;
+			}
+		}
+	}
+	.popup-social {
+		position: absolute;
+		display: none;
+		width: 220px;
+		height: 180px;
+		padding: 20px 0 15px 35px;
+		z-index: 15;
+		background: url(../img/common/bg_popup_social.png) no-repeat 0 0;
+		li {
+			list-style: none;
+			padding-bottom: 5px;
+		}
+		a {
+			display: block;
+			color: #333;
+			padding: 2px 0 8px 30px;
+			background: url(../img/common/ic_sprite_social.png) no-repeat left center;
+			&:hover {
+				color: #a8ce3b;
+			}
+			&.facebook {
+				background-position: 0 0;
+			}
+			&.twitter {
+				background-position: 0 -34px;
+			}
+			&.gplus {
+				background-position: 0 -69px;
+			}
+			&.linkedin {
+				background-position: 0 -103px;
+			}
+		}
+	}
+	.hori-timeline {
+		background-color: #f3f3f3;
+		.inner-timeline {
+			height: 133px;
+			padding: 20px 15px;
+		}
+	}
+	.list-item-timeline {
+		width: 1025px;
+		padding: 0 27px;
+		margin: 0 auto;
+		background: url(../img/common/timeline_bar.png) no-repeat center 50px;
+		li {
+			float: left;
+			list-style: none;
+			position: relative;
+		}
+		.ic-marker {
+			display: block;
+			width: 38px;
+			height: 72px;
+			background: url(../img/common/ic_sprite_marker.png) no-repeat;
+			&.job {
+				background-position: 0 0;
+			}
+			&.candidate {
+				background-position: -134px 0;
+			}
+			&.cv-send-out {
+				background-position: -268px 0;
+			}
+			&.interview {
+				background-position: -402px 0;
+			}
+			&.job-offer {
+				background-position: -535px 0;
+			}
+			&.placements {
+				background-position: -669px 0;
+			}
+			&.pro-invoice {
+				background-position: -803px 0;
+			}
+			&.red-invoice {
+				background-position: -937px 0;
+			}
+		}
+		.number-marker {
+			width: 38px;
+			height: 38px;
+			display: block;
+			padding: 9px 0;
+			text-align: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.label-marker {
+			position: absolute;
+			top: 80px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+	.popup-timeline {
+		display: none;
+		width: 188px;
+		height: 44px;
+		padding-top: 15px;
+		text-align: center;
+		position: absolute;
+		left: -200%;
+		top: 72px;
+		background: url(../img/common/bg_popup_timeline.png) no-repeat 0 0;
+		span {
+			padding: 0 5px;
+		}
+		b {
+			color: #0c9ce6;
+		}
+	}
+}
+
+.main-footer {
+	font-size: 12px;
+	.support-phone {
+		color: #0e4393;
+		padding-right: 10px;
+		strong {
+			font-size: 18px;
+			line-height: 16px;
+		}
+	}
+	.support-view {
+		padding-right: 10px;
+	}
+	.send-mail {
+		color: #0e4393;
+		border: 0;
+		outline: 0;
+		cursor: pointer;
+		background: transparent;
+	}
+}
+
+#My-page {}

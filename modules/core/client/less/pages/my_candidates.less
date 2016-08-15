@@ -1,0 +1,194 @@
+/*
+ * Page: my candidates pages
+ * ------------------------------
+ */
+#My-candidates-page {
+	.col-name {
+		padding-left: 15px;
+		&.ic-green {
+			background: url(../img/hiring_companies/ic_circle_green.png) no-repeat left 5px;
+		}
+		&.ic-gray {
+			background: url(../img/hiring_companies/ic_circle_gray.png) no-repeat left 5px;
+		}
+	}
+	.total-star {
+		position: absolute;
+		top: 1px;
+		left: 2px;
+		&.green {
+			color: #0099ff;
+		}
+		&.yellow {
+			color: #ffcc00;
+		}
+	}
+	.group-rating {
+		position: relative;
+	}
+	.popup-rating {
+		display: none;
+		position: absolute;
+		right: 145px;
+    top: -44px;
+		width: 389px;
+		height: 137px;
+		padding: 20px 35px 25px 25px;
+		background: url(../img/hiring_companies/bg_popup_rating.png) no-repeat 0 0;
+		.inner-popup-rating {
+			height: 90px;
+		}
+	}
+	.list-content-rating {
+		padding: 0;
+		.item-rating {
+			padding: 0 0 10px 40px;
+			background: url(../img/hiring_companies/ar_rating.png) no-repeat left top;
+			&.lbl-pro {
+				background-position: -2px 3px;
+			}
+			&.lbl-com {
+				background-position: -2px -48px;
+			}
+		}
+	}
+	.box-artical {
+		position: relative;
+		z-index: 5;
+		i {
+			cursor: pointer;
+		}
+	}
+	.artical-popup {
+		display: none;
+		position: absolute;
+		left: 35px;
+		width: 300px;
+		padding: 10px 10px 10px 15px;
+		border: 1px solid #e3e3e3;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+		box-shadow: 2px 2px 3px #efefef;
+		background-color: #fff;
+		z-index: 250;
+	}
+	.inner-artical-popup {
+		position: relative;
+		&::before {
+			content: "";
+	    width: 0;
+	    height: 0;
+	    border-top: 10px solid transparent;
+	    border-right: 16px solid #e3e3e3;
+	    border-bottom: 10px solid transparent;
+	    position: absolute;
+	    left: -31px;
+	    top: 50%;
+	    margin-top: -10px;
+	    z-index: 5;
+		}
+		&::after {
+			content: "";
+	    width: 0;
+	    height: 0;
+	    border-top: 10px solid transparent;
+	    border-right: 16px solid #fff;
+	    border-bottom: 10px solid transparent;
+	    position: absolute;
+	    left: -28px;
+	    top: 50%;
+	    margin-top: -10px;
+	    z-index: 8;
+		}
+	}
+}
+
+.opacity(@opacity) {
+	opacity							:@opacity;	
+	@msopacity						:@opacity * 100;	
+	filter							:~"alpha(opacity=@{msopacity})";
+}
+
+.transition(@prop, @transition) {
+  -webkit-transition				:~"-webkit-@{prop}" @transition;
+     -moz-transition				:~"-moz-@{prop}" @transition;
+      -ms-transition				:~"-ms-@{prop}" @transition;
+       -o-transition				:~"-o-@{prop}" @transition;
+          transition				:@prop @transition;
+}
+
+.box-star-rate {
+	position: relative;
+	.stars {
+		@star_size		:20px;
+		@star_number	:5;
+		background		:url(../img/hiring_companies/ic_stars.png) repeat-x 0 0;
+		width			:@star_size * @star_number;
+    margin:0 auto;
+		.clearfix();
+	
+		input[type="radio"]	{
+			position	:absolute;
+			.opacity(0);
+			
+			.starX (@index) when (@index > 0) {
+				&.star-@{index}:checked {
+					~ span {
+						width		:((100 / @star_number) * @index) + 0%;
+					}
+				}
+				.starX(@index - 1);
+			}
+			.starX(@star_number);			
+		}
+		label	{
+			display			:block;
+			width			:@star_size;
+			height			:@star_size;
+			margin			:0!important;
+			padding			:0!important;
+			text-indent		:-999em;
+			float:left;
+			position:relative;
+			z-index:10;
+			background:transparent!important;
+      cursor: pointer;
+			&:hover	{
+				~ span {
+					&.star-green {
+						background-position	:0 -@star_size;
+					}
+					&.star-yellow {
+						background-position	:0 -(@star_size * 2);
+					}
+				}
+			}
+			.starX (@index) when (@index > 0)	{
+				&.star-@{index}:hover	{
+					~ span {
+						width		:((100 / @star_number) * @index) + 0%!important;
+					}
+				}
+				.starX(@index - 1);
+			}
+			.starX(@star_number);			
+		}
+		span {
+			display		:block;
+			height		:@star_size;
+			width		:0;
+      position:relative;
+      top:0;
+      left:0;
+      height:@star_size;
+      &.star-green {
+				background	:url(../img/hiring_companies/ic_stars.png) repeat-x 0 -@star_size;
+      }
+      &.star-yellow {
+				background	:url(../img/hiring_companies/ic_stars.png) repeat-x 0 -(@star_size * 2);
+      }
+			.transition(width, 0.5s);
+		}
+	}
+}
